@@ -1,0 +1,9 @@
+ArsenalApp/
+├── ArsenalApp.xcodeproj
+├── ArsenalApp/
+│   ├── App.swift
+│   ├── ContentView.swift
+│   └── MatchService.swift
+├── ArsenalWidget/
+│   └── Widget.swift
+└── codemagic.yaml
