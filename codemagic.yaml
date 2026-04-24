@@ -1,0 +1,23 @@
+workflows:
+  ios-workflow:
+    name: Arsenal Build
+
+    environment:
+      ios_signing:
+        distribution_type: development
+        bundle_identifier: com.arsenal.app
+
+    scripts:
+      - name: Generate project
+        script: |
+          curl -Ls https://install.tuist.io | bash
+          tuist generate
+
+      - name: Build IPA
+        script: |
+          xcode-project build-ipa \
+            --project "ArsenalApp.xcodeproj" \
+            --scheme "ArsenalApp"
+
+    artifacts:
+      - build/ios/ipa/*.ipa
